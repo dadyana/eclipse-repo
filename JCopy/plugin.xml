@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Copy"
+            id="JCopy">
+      </category>
+      <view
+            name="Copy View"
+            icon="icons/sample.gif"
+            category="JCopy"
+            class="jcopy.views.CopyView"
+            id="jcopy.views.CopyView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               ratio="0.5"
+               relative="org.eclipse.ui.views.ProblemView"
+               relationship="right"
+               id="jcopy.views.CopyView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         id="br.dady"
+         name="JCopy"
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="jcopy.preferences.PathPreferencePage"
+            class="jcopy.preferences.CopyPreferencePage"
+            id="jcopy.preferences.CopyPreferencePage"
+            name="Configure Paths">
+      </page>
+      <page
+            category="br.dady"
+            class="jcopy.preferences.PathPreferencePage"
+            id="jcopy.preferences.PathPreferencePage"
+            name="JCopy">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="jcopy.preferences.PreferenceInitializer">
+      </initializer>
+      <scope
+            name="JCopy.scope1">
+      </scope>
+      <initializer
+            class="jcopy.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+   <extension
+         point="org.eclipse.equinox.preferences.preferences">
+   </extension>
+
+</plugin>
