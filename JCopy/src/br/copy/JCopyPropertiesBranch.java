@@ -28,16 +28,6 @@ public class JCopyPropertiesBranch {
 		this.pathJMX = pathJMX;
 	}
 
-public 	JCopyPropertiesBranch(String path) throws Exception {
-		File file = new File(path);
-		this.pathJMX = path;
-		String userFolder = System.getProperty("user.home");
-		String folder = "c:/temp";
-		copyDirectory(file, new File(userFolder
-				+ "/senior/"));
-		System.out.println("Finish");
-
-	}
 
     public 	JCopyPropertiesBranch(String  origin, String destiny) throws Exception {
         File file = new File(origin);
@@ -123,17 +113,4 @@ public 	JCopyPropertiesBranch(String path) throws Exception {
 
 
 
-	public static void main(String arg[]) throws Exception {
-
-		// String path = System.getProperty("user.dir") +
-		// "\\src\\dady_plugin\\testes";
-		// String path = "c:\\temp\\FormcenterServerAllTests Dev.xml";
-		// String path = "c:\\temp\\AllTests.xml";
-		String path = "c:\\temp\\h.txt";
-
-		JCopyPropertiesBranch replaceFileJMX = new JCopyPropertiesBranch(path);
-		// replaceFileJMX.openJMX(new
-		// File("c:\\temp\\FormcenterServerAllTests Dev.xml"));
-
-	}
 }
